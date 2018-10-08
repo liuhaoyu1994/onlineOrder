@@ -1,0 +1,8 @@
+<% @restaurants.each do |rest| %>
+    <%= link_to rest.name, rest %>
+    <%= rest.address %>
+    <%= image_tag(rest.photo_url) %>
+    <br>
+<% end %>
+
+<%= link_to "New Restaurant", restaurants_new_path %>

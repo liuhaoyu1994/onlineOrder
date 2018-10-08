@@ -13,6 +13,7 @@ gem 'sass-rails',   '5.0.6'
 gem 'bootstrap-sass', '3.2.0.2'
 gem 'rails',                   '5.1.6'
 gem 'bcrypt',                  '3.1.12'
+gem 'carrierwave', '~> 1.0'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
