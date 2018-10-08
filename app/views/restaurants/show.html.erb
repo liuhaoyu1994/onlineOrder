@@ -1,0 +1,10 @@
+<%= @restaurant.name %>
+<%= @restaurant.address %>
+<%= image_tag(@restaurant.photo_url) %>
+<br>
+<% @restaurant.categories.each do |cat| %>
+    <%= cat.name %>
+    <br>
+<% end %>
+New Category
+<%= render partial: 'restaurants/category_form', locals: { restaurant: @restaurant }%>

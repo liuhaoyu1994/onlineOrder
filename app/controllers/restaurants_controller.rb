@@ -8,6 +8,11 @@ class RestaurantsController < ApplicationController
         @restaurants = Restaurant.all
     end
     
+    def show
+        @restaurant = Restaurant.find(params[:id])
+        @categories = @restaurant.categories
+    end
+    
     def create
         @user = User.first
         @restaurant = @user.restaurants.build(restaurant_params)
