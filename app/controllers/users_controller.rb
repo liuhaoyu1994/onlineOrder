@@ -12,6 +12,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      log_in @user #login after signup
       # 处理注册成功的情况
       flash[:success] = "Welcome to the Online Order System!"
       redirect_to user_url(@user)
