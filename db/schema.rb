@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 20181008081211) do
     t.index ["user_id", "created_at"], name: "index_restaurants_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_restaurants_on_user_id"
   end
+ActiveRecord::Schema.define(version: 20181008083230) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
@@ -38,6 +39,7 @@ ActiveRecord::Schema.define(version: 20181008081211) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
+    t.string "remember_digest"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
