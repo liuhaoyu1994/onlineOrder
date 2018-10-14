@@ -11,6 +11,7 @@ class RestaurantsController < ApplicationController
     def show
         @restaurant = Restaurant.find(params[:id])
         @categories = @restaurant.categories
+        @new_category = @restaurant.categories.build
     end
     
     def create
@@ -28,4 +29,5 @@ class RestaurantsController < ApplicationController
     def restaurant_params
       params.require(:restaurant).permit(:name, :address, :photo, :users)
     end
+
 end
