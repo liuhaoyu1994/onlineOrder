@@ -1,0 +1,14 @@
+<%= form_for @restaurant, html: {multipart: true} do |f| %>
+
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+    
+    <%= f.label :address %>
+    <%= f.text_field :address, class: 'form-control' %>
+    
+    <%= f.file_field :photo %>
+    <%= f.hidden_field :photo_cache %>
+    
+    <%= f.submit "Create Restaurant", class: "btn btn-primary" %>
+<% end %>
+

@@ -10,6 +10,11 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
                                          password:              "password",
                                          password_confirmation: "password" } }
     end
+    assert_template 'users/new'
+    `
+    assert_select 'div#<CSS id for error explanation>'
+    assert_select 'div.<CSS class for field with error>'
+    `
     follow_redirect!
     assert_template 'users/show'
     assert is_logged_in?
