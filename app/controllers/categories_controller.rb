@@ -4,6 +4,8 @@ class CategoriesController < ApplicationController
     end
     
     def create
+
+        
         @restaurant = Restaurant.find(params[:restaurant_id])
         @category = @restaurant.categories.build(category_params)
         if @category.save

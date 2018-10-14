@@ -1,7 +1,6 @@
 class RestaurantsController < ApplicationController
     def new
-        @user = User.first
-        @restaurant = @user.restaurants.build
+        @restaurant = current_user.restaurants.build
     end
     
     def index
@@ -15,7 +14,7 @@ class RestaurantsController < ApplicationController
     end
     
     def create
-        @user = User.first
+        @user = current_user
         @restaurant = @user.restaurants.build(restaurant_params)
         if @restaurant.save
           redirect_to restaurants_path
