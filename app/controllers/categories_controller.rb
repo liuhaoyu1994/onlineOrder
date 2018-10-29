@@ -1,11 +1,19 @@
 class CategoriesController < ApplicationController
     def new
-        
+        @category = Category.new
+    end
+    
+    def index
+        @categories = Category.all
+    end
+    
+    def show
+        @category = Category.find(params[:id])
+        @dishes = @category.dishes
+        @new_dish = @category.dishes.build
     end
     
     def create
-
-        
         @restaurant = Restaurant.find(params[:restaurant_id])
         @category = @restaurant.categories.build(category_params)
         if @category.save
@@ -14,7 +22,9 @@ class CategoriesController < ApplicationController
           redirect_to @restaurant
         end
     end
-  
+    
+    
+      
     private
 
     def category_params

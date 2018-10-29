@@ -1,0 +1,15 @@
+<%= form_for @new_dish do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: 'form-control' %>
+    
+    <%= f.label :price %>
+    <%= f.number_field :price, :step => "0.01", class: 'form-control' %>
+    
+
+   
+    <%= f.label @category.id %>
+    <%= hidden_field_tag :category_id, @category.id %>
+    
+    <%= f.submit "add dish", class: "btn btn-primary" %>
+<% end %>
+

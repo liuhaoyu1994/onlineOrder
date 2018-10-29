@@ -3,7 +3,7 @@
 <%= image_tag(@restaurant.photo_url) %>
 <br>
 <% @restaurant.categories.each do |cat| %>
-    <%= cat.name %>
+    <%= link_to cat.name, cat %>
     <br>
 <% end %>
 New Category

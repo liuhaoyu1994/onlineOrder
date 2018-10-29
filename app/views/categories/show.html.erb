@@ -1,0 +1,13 @@
+<%= @category.name %>
+<br>
+<% @category.dishes.each do |dish| %>
+    <%= dish.name %>
+    <%= dish.price %>
+
+    <br>
+<% end %>
+
+<!--!!!!-->
+New Dish
+<%= render partial: 'restaurants/dish_form'%>  
+<!--!!!!-->

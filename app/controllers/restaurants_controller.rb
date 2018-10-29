@@ -11,6 +11,7 @@ class RestaurantsController < ApplicationController
         @restaurant = Restaurant.find(params[:id])
         @categories = @restaurant.categories
         @new_category = @restaurant.categories.build
+
     end
     
     def create
