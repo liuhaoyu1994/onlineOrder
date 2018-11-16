@@ -1,0 +1,6 @@
+<% @categories.each do |rest| %>
+    <%= link_to rest.name, rest %>
+    <br>
+<% end %>
+
+<%= link_to "New Category", categories_new_path %>

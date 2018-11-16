@@ -16,4 +16,12 @@ class RestaurantTest < ActiveSupport::TestCase
     @restaurant.user_id = nil
     assert_not @restaurant.valid?
   end
+  
+  test "associated categories should be destroyed" do
+    @restaurant.save
+    @restaurant.categories.create!(name: "test_cate")
+    assert_difference 'Category.count', -1 do
+      @restaurant.destroy
+    end
+  end
 end

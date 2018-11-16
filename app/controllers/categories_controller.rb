@@ -3,6 +3,12 @@ class CategoriesController < ApplicationController
         
     end
     
+    def show
+        @category = Category.find(params[:id])
+        @dishes = @category.dishes
+        @new_dish = @category.dishes.build
+    end
+    
     def create
 
         

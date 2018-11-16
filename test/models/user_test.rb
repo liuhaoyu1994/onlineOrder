@@ -41,4 +41,11 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
   
+  test "associated restaurants should be destroyed" do
+    @user.save
+    @user.restaurants.create!(name: "test_rest", address: "123 street" )
+    assert_difference 'Restaurant.count', -1 do
+      @user.destroy
+    end
+  end
 end

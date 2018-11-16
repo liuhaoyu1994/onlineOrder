@@ -1,0 +1,9 @@
+<%= @category.name %>
+<br>
+<% @category.dishes.each do |cat| %>
+    <%= cat.name %>
+    <%= cat.price %>
+    <br>
+<% end %>
+New Dish
+<%= render partial: 'categories/dish_form'%>
