@@ -1,7 +1,10 @@
 <%= form_for(@new_dish) do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name, class: 'form-control' %>
-    <%= f.label @category.id %>
+    <%= f.label :price %>
+    <%= f.text_field :price, class:'form-control' %>
+    <%= f.file_field :photo %>
+    <%= f.hidden_field :photo_cache %>
     <%= hidden_field_tag :category_id, @category.id %>
     <%= f.submit "add", class: "btn btn-primary" %>
 <% end %>

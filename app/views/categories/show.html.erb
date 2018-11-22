@@ -1,8 +1,9 @@
 <%= @category.name %>
 <br>
-<% @category.dishes.each do |cat| %>
-    <%= cat.name %>
-    <%= cat.price %>
+<% @category.dishes.each do |dish| %>
+    <%= link_to dish.name , dish %> 
+    <%= dish.name %>
+    <%= dish.price %>
     <br>
 <% end %>
 New Dish
