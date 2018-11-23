@@ -2,9 +2,10 @@
 <br>
 <% @category.dishes.each do |dish| %>
     <%= link_to dish.name , dish %> 
-    <%= dish.name %>
     <%= dish.price %>
     <br>
 <% end %>
+<% if current_user.id == @category.restaurant.user_id %>
 New Dish
 <%= render partial: 'categories/dish_form'%>
+<% end %>

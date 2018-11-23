@@ -6,5 +6,7 @@
     <%= link_to cat.name, cat %>
     <br>
 <% end %>
-New Category
-<%= render partial: 'restaurants/category_form'%>
+<% if current_user.id == @restaurant.user_id %>
+    New Category
+    <%= render partial: 'restaurants/category_form'%>
+<% end %>

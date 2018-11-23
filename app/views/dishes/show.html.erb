@@ -2,3 +2,14 @@
 <%= @dish.price %>
 <%= image_tag(@dish.photo_url) %>
 <br>
+<% provide(:title, "Edit dish") %>
+<h1>Update your dish</h1>
+<% if current_user.id == @dish.category.restaurant.user_id %>
+    <%= form_for(@dish) do |d| %> 
+        <%= d.label :name %>
+        <%= d.text_field :name, class:'form_control' %>
+        <%= d.label :price %>
+        <%= d.text_field :price, class:'form_control' %>
+        <%= d.submit "Save changes", class: "btn btn-primary" %>
+    <% end %>
+<% end %>

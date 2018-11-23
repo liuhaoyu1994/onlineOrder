@@ -7,10 +7,9 @@
 
   <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary" %>
 </div>
-
-<%= link_to image_tag("rails.png", alt: "Rails logo"),
-            'http://rubyonrails.org/' %>
-            
-<% if current_user %>
-  <%= current_user.name %>
+<% @restaurants.each do |rest| %>
+  <%= link_to rest.name, rest %>
+  <%= rest.address %>
+  <%= image_tag(rest.photo_url) %>
+  <br>
 <% end %>

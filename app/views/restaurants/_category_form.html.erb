@@ -1,7 +1,6 @@
 <%= form_for(@new_category) do |f| %>
     <%= f.label :name %>
     <%= f.text_field :name, class: 'form-control' %>
-    <%= f.label @restaurant.id %>
     <%= hidden_field_tag :restaurant_id, @restaurant.id %>
     <%= f.submit "add", class: "btn btn-primary" %>
 <% end %>

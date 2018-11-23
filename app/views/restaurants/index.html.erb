@@ -1,8 +1,11 @@
-<% @restaurants.each do |rest| %>
-    <%= link_to rest.name, rest %>
-    <%= rest.address %>
-    <%= image_tag(rest.photo_url) %>
-    <br>
+<% if logged_in? %>
+    <% @restaurants.each do |rest| %>
+        <% if current_user.id == rest.user_id %>
+            <%= link_to rest.name, rest %>
+            <%= rest.address %>
+            <%= image_tag(rest.photo_url) %>
+            <br>
+        <% end %>
+    <% end %>
+    <%= link_to "New Restaurant", restaurants_new_path %>
 <% end %>
-
-<%= link_to "New Restaurant", restaurants_new_path %>

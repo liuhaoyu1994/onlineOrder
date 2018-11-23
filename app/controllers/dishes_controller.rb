@@ -17,9 +17,18 @@ class DishesController < ApplicationController
         end
     end
     
-        private
-
+    def update
+      @dish = Dish.find(params[:id])
+      if @dish.update_attributes(dish_params)
+        flash[:success]= "Updated"
+        redirect_to @dish
+      else
+        redirect_to @dish
+      end
+    end
+    private
+    
     def dish_params
-      params.require(:dish).permit(:name, :category_id)
+      params.require(:dish).permit(:name, :category_id, :price)
     end
 end
